@@ -6,13 +6,16 @@
   "scripts": {
     "build": "rm -rf ./build && webpack",
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stats": "webpack --profile --json > stats.json",
+    "deploy": "gh-pages -d build"
   },
   "author": "Danial Moazen",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^2.24.1",
     "purifycss-webpack-plugin": "^2.0.3",
     "style-loader": "^0.13.1",

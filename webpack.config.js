@@ -40,12 +40,15 @@ var config;
 // Detect how npm is run and branch based on that
 switch(process.env.npm_lifecycle_event) {
   case 'build':
+  case 'stats':
     config = merge(
       common,
       {
         devtool: 'source-map',
         output: {
           path: PATHS.build,
+          // Tweak this to match your GitHub project name
+          publicPath: '/webpack-demo/',
           filename: '[name].[chunkhash].js',
           // This is used for require.ensure. The setup
           // will work without but this is useful to set.
@@ -81,4 +84,6 @@ switch(process.env.npm_lifecycle_event) {
     );
 }
 
-module.exports = validate(config);
+module.exports = validate(config, {
+  quiet: true
+});
