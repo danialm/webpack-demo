@@ -6,11 +6,13 @@ const parts = require('./lib/parts');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
+  build: path.join(__dirname, 'build'),
+  fonts: path.join(__dirname, 'app', 'fonts'),
+  images: path.join(__dirname, 'app', 'images'),
   style: [
     path.join(__dirname, 'node_modules', 'purecss'),
     path.join(__dirname, 'app', 'main.css')
-  ],
-  build: path.join(__dirname, 'build')
+  ]
 };
 
 const pkg = require('./package.json');
@@ -27,6 +29,35 @@ const common = {
   output: {
     path: PATHS.build,
     filename: '[name].js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.(jpg|png|jpeg|svg)$/,
+        loader: 'url-loader?limit=25000',
+        include: PATHS.images
+      },
+      {
+        test: /\.woff$/,
+        // Inline small woff files and output them below font/.
+        // Set mimetype just in case.
+        loader: 'url',
+        query: {
+          name: '[hash].[ext]',
+          limit: 5000,
+          mimetype: 'application/font-woff'
+        },
+        include: PATHS.fonts
+      },
+      {
+        test: /\.ttf$|\.eot$/,
+        loader: 'file',
+        query: {
+          name: 'font/[hash].[ext]'
+        },
+        include: PATHS.fonts
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -83,6 +114,7 @@ switch(process.env.npm_lifecycle_event) {
       })
     );
 }
+
 
 module.exports = validate(config, {
   quiet: true

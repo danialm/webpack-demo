@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Starfish;
+    src: url(./fonts/starfish/Starfish.ttf);
+}
+
+body {
+  background-image: url('./images/x.jpeg');
+  font-family: Starfish;
+}
+
 .bg {
   background: wheat;
 }

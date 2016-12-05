@@ -1,2 +1,0 @@
-webpackJsonp([0,3],{0:function(e,n,t){t(1);var a=t(28);document.body.appendChild(a())},28:function(e,n){e.exports=function(){var e=document.createElement("div"),n=document.createElement("h1"),t=document.createElement("p");return n.innerHTML="Hello World!",t.innerHTML="If you don't eat your meat, you can't have any pudding!",n.className="bg",t.className="pure-button",e.appendChild(n),e.appendChild(t),e}}});
-//# sourceMappingURL=app.99d313662d9e0b9d20e3.js.map
