@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Starfish;
+  src: url(/webpack-demo/font/8d803aa86da54fc5efcfd663b44c1fd5.ttf);
+}
+
+body {
+  background-image: url(/webpack-demo/9e89f38f1ff7de4747fe13ca961750fd.jpeg);
+  font-family: Starfish;
+}
+
+.bg {
+  background: wheat;
+}
+/*# sourceMappingURL=style.c589dc75160cc1d49343.css.map*/
