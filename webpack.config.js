@@ -53,7 +53,7 @@ const common = {
         test: /\.ttf$|\.eot$/,
         loader: 'file',
         query: {
-          name: 'font/[hash].[ext]'
+          name: '[hash].[ext]'
         },
         include: PATHS.fonts
       }
