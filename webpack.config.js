@@ -39,8 +39,6 @@ const common = {
       },
       {
         test: /\.woff$/,
-        // Inline small woff files and output them below font/.
-        // Set mimetype just in case.
         loader: 'url',
         query: {
           name: '[hash].[ext]',
